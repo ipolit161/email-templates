@@ -188,7 +188,7 @@ class EmailTemplate extends Model
 
         return [
             'user' => $models->user,
-            'content' => TokenHelper::replace($this->content ?? '', $models),
+            'content' => $this->content ? \App\Helpers\FabricatorRenderer::render($this->content, $models) : '' ,
             'subject' => TokenHelper::replace($this->subject ?? '', $models),
             'preHeaderText' => TokenHelper::replace($this->preheader ?? '', $models),
             'title' => TokenHelper::replace($this->title ?? '', $models),
