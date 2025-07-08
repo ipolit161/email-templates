@@ -3,7 +3,6 @@
 namespace Visualbuilder\EmailTemplates\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Visualbuilder\EmailTemplates\Traits\BuildGenericEmail;
@@ -14,6 +13,8 @@ class UserVerifyEmail extends Mailable
     use SerializesModels;
     use BuildGenericEmail;
 
+    public $user;
+    public $verificationUrl;
     public $template = 'user-verify-email';
     public $sendTo;
 
@@ -22,8 +23,10 @@ class UserVerifyEmail extends Mailable
      *
      * @return void
      */
-    public function __construct(public Model $user, public string $verificationUrl)
+    public function __construct($user, $token)
     {
+        $this->user = $user;
+        $this->verificationUrl = $token;
         $this->sendTo = $user->email;
     }
 }

@@ -5,7 +5,7 @@
     </div>
 
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
-        <!-- LOGO -->
+        <!-- LOGO222 -->
         <tr>
             <td bgcolor="{{$data['theme']["header_bg_color"]}}" align="center" style="background-color: {{$data['theme']["header_bg_color"]}}">
                 <!--[if (gte mso 9)|(IE)]>

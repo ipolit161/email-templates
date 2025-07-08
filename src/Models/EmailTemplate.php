@@ -21,8 +21,8 @@ use Visualbuilder\EmailTemplates\Facades\TokenHelper;
  * @property array $from
  * @property string $name
  * @property string $view
- * @property array $cc
- * @property array $bcc
+ * @property object $cc
+ * @property object $bcc
  * @property string $subject
  * @property string $title
  * @property string $preheader
@@ -51,8 +51,6 @@ class EmailTemplate extends Model
         'content',
         'language',
         'logo',
-        'cc',
-        'bcc'
 
     ];
 
@@ -64,8 +62,7 @@ class EmailTemplate extends Model
         'created_at' => 'datetime:Y-m-d H:i:s',
         'updated_at' => 'datetime:Y-m-d H:i:s',
         'from' => 'array',
-        'cc' => 'array',
-        'bcc' => 'array',
+        'content' => 'array'
     ];
     /**
      * @var string[]

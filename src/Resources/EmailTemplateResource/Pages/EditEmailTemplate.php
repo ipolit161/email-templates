@@ -18,10 +18,10 @@ class EditEmailTemplate extends EditRecord
     protected function getActions(): array
     {
         return [
-            Actions\Action::make('back')->label(__('Back'))
+            Actions\Action::make('back')->label(__('Назад'))
             ->url(EmailTemplateResource::getUrl())
             ,
-            Actions\ViewAction::make()->label(__('Preview'))->modalContent(fn (EmailTemplate $record): View => view(
+            Actions\ViewAction::make()->label(__('Просмотреть'))->modalContent(fn (EmailTemplate $record): View => view(
                 'vb-email-templates::forms.components.iframe',
                 ['record' => $record],
             ))->form(null),
